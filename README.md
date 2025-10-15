@@ -1,0 +1,1 @@
+# Manual-QA-case-study-ECommerce-Medicine-Store
