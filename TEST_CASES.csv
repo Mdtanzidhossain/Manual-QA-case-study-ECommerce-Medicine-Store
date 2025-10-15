@@ -1,0 +1,9 @@
+Module,Feature,TestCaseID,Title,Preconditions,Steps,Expected,Type,Priority,Tags,Data,Browser,Automation
+Catalog,Search,MED-001,Search exact match,None,"Search 'Paracetamol 500mg'","Top result is exact; count accurate",Pos,P1,Search,,Chrome,No
+PDP,Stock,MED-010,Add to cart when stock=0,Item stock=0,"Open PDP -> Add","Blocked with clear message",Neg,P1,Stock,,Firefox,No
+Cart,Qty,MED-020,Update qty to 0,Item in cart,"Set qty=0","Item removed; totals update",Edge,P2,Cart,,Edge,No
+Promo,Coupon,MED-030,Apply valid coupon,Eligible cart,"Apply 'HEALTH10'","10% discount applied once",Pos,P1,Promo,Subtotal=1000,Chrome,No
+Promo,Coupon,MED-031,Reject ineligible coupon,Not eligible,"Apply 'HEALTH10'","Explains ineligibility; no discount",Neg,P1,Promo,,Firefox,No
+Checkout,Totals,MED-040,Rounding at 0.005 edge,Cart prepared,"Proceed to checkout","Totals match rounding spec",Edge,P1,Money,0.005,Edge,No
+Orders,History,MED-050,Order appears after checkout,Completed order,"Open history","Latest order at top; totals match",Pos,P2,History,,Chrome,No
+Exports,Invoice,MED-060,Invoice totals match UI,Completed order,"Download invoice","Line items & totals equal UI",Pos,P2,Data,,Firefox,No
